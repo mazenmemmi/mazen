@@ -1,0 +1,148 @@
+BODY
+{
+    MARGIN-TOP: 0px;
+    FONT-SIZE: 10pt;
+    MARGIN-LEFT: 0px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Verdana, Tahoma, Arial
+}
+TD
+{
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, tahoma, Arial
+}
+FORM
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-TOP: 0px
+}
+INPUT
+{
+    BORDER-RIGHT: #0099cc 1px solid;
+    BORDER-TOP: #0099cc 1px solid;
+    BORDER-LEFT: #0099cc 1px solid;
+    BORDER-BOTTOM: #0099cc 1px solid;
+    FONT-SIZE: 8pt;
+    MARGIN: 0px;
+    COLOR: black;
+    FONT-FAMILY: Verdana, Tahoma, Arial;
+    BACKGROUND-COLOR: #ffffff
+}
+INPUT.noborders
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: medium none;
+    BACKGROUND-COLOR: transparent
+}
+TEXTAREA
+{   
+    BORDER-RIGHT: #0099cc 1px solid;
+    BORDER-TOP: #0099cc 1px solid;
+    BORDER-LEFT: #0099cc 1px solid;
+    BORDER-BOTTOM: #0099cc 1px solid;
+    FONT-SIZE: 8pt;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: white;
+   
+}
+
+A:link
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    FONT-WEIGHT: bold;
+    COLOR: #800000
+}
+A.normallink:link
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.normallink:visited
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.normallink:active
+{
+    COLOR: blue;
+    TEXT-DECORATION: none
+}
+A.normallink:hover
+{
+    TEXT-DECORATION: underline
+}
+.AdmMessage
+{
+    BORDER-RIGHT: lightgrey 1px outset;
+    PADDING-RIGHT: 4px;
+    BORDER-TOP: lightgrey 1px outset;
+    PADDING-LEFT: 4px;
+    PADDING-BOTTOM: 4px;
+    MARGIN: 4px;
+    BORDER-LEFT: lightgrey 1px outset;
+    WIDTH: 400px;
+    COLOR: black;
+    PADDING-TOP: 4px;
+    BORDER-BOTTOM: lightgrey 1px outset;
+    FONT-FAMILY: Verdana, Arial;
+    BACKGROUND-COLOR: gainsboro;
+    TEXT-ALIGN: center
+}
+.titles
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 11pt;
+    FONT-FAMILY: Arial
+}
+.SELECTCLASS
+{
+    FONT-SIZE: 8pt;
+    WIDTH: 200px;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #EEF2F9;
+}
+/* file manager */
+.formClass
+{
+    border : #ffffff 1px solid ;
+    BACKGROUND-COLOR: #ffffff;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10px;
+    COLOR: #800000;
+    FONT-FAMILY: Verdana,Tahoma,Arial,Helvetica
+}
+.lightRow {
+	BACKGROUND-COLOR: white;
+}
+.darkRow {
+	BACKGROUND-COLOR: #eef2f9;
+}
+.titleRow {
+	BACKGROUND-COLOR: #A4BCDD
+}
+.boldText
+{
+    FONT-WEIGHT: bold
+}

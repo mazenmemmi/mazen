@@ -1,0 +1,334 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: editcell.htm
+	Function: Dialog for editing cells 
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Cellule</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ INPUT.rd  {background-color :menu ; font-family : Tahoma; font-size:11 ; border : 0}
+ SELECT {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+
+function IsDigit()
+{
+  return ((event.keyCode >= 48) && (event.keyCode <= 57))
+}
+
+
+function updatecolor(mycolorfield)
+{
+  var myarr = showModalDialog( "selcolor.htm","","dialogWidth: 340px ; dialogHeight: 330px; status:no" );
+  if (myarr != null) 
+  {
+    if (myarr=='Auto') myarr='';
+    mycolorfield.value = myarr;
+  }
+}
+
+function EnableWidth(isChecked)
+  {
+ 
+     TDwidth.disabled = !isChecked;
+     TDwidthmode.disabled = !isChecked;
+     
+     if (TDwidth.disabled)
+     {
+     TDwidth.style.backgroundColor ='menu';
+     TDwidthmode.style.backgroundColor = 'menu';
+     }
+     else
+     {
+     TDwidth.style.backgroundColor ='white';
+     TDwidthmode.style.backgroundColor = 'white';
+     }
+    }
+function EnableHeight(isChecked)
+  {
+ 
+     TDheight.disabled = !isChecked;
+     TDheightmode.disabled = !isChecked;
+     
+     if (TDheight.disabled)
+     {
+     TDheight.style.backgroundColor ='menu';
+     TDheightmode.style.backgroundColor = 'menu';
+     }
+     else
+     {
+     TDheight.style.backgroundColor ='white';
+     TDheightmode.style.backgroundColor = 'white';
+     }
+    }
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=window EVENT=onload>
+    // collect table inormation and update window
+  switch( window.dialogArguments["ALIGN"] )
+    {
+    case "": TDalign.options(0).selected = true; break;
+    case "left": TDalign.options(1).selected = true; break;
+    case "center": TDalign.options(2).selected = true; break;
+    case "right": TDalign.options(3).selected = true; break;
+    }
+    
+    switch( window.dialogArguments["VALIGN"] )
+    {
+    case "": TDvalign.options(0).selected = true; break;
+    case "top": TDvalign.options(1).selected = true; break;
+    case "middle": TDvalign.options(2).selected = true; break;
+    case "baseline": TDvalign.options(3).selected = true; break;
+    case "bottom": TDvalign.options(4).selected = true; break;
+    }
+  // width
+  if ( window.dialogArguments["WIDTHmode"]== "%" ) 
+    { TDwidthmode.options(0).selected=true  } 
+    else 
+    { TDwidthmode.options(1).selected=true }
+    
+  if (window.dialogArguments["WIDTH"]==-1)
+    {
+    specifywidth.checked=false;
+    EnableWidth(false);
+    TDwidth.value = '100'
+    TDwidthmode.options(0).selected=true // keep this params hidden default by the editor 
+    }
+  else
+    {
+    specifywidth.checked=true;
+    EnableWidth(true);
+    TDwidth.value=window.dialogArguments["WIDTH"];
+    }
+    
+   
+    // height
+    if ( window.dialogArguments["HEIGHTmode"]== "%" ) 
+    {TDheightmode.options(0).selected=true} 
+    else 
+    {TDheightmode.options(1).selected=true}
+    
+    if (window.dialogArguments["HEIGHT"]==-1)
+    {
+    specifyheight.checked=false;
+    EnableHeight(false);
+    TDheight.value = '100'
+    TDheightmode.options(0).selected = true // keep this params hidden default by the editor 
+    }
+    else
+    {
+    specifyheight.checked=true;
+    EnableHeight(true);
+    TDheight.value=window.dialogArguments["HEIGHT"];
+    }
+  
+  TDrowspan.value=window.dialogArguments["ROWSPAN"];
+  TDcolspan.value=window.dialogArguments["COLSPAN"];
+
+  // nowrap ?
+  if (window.dialogArguments["NOWRAP"]) {TDnowrap.checked = true; } 
+    else { TDnowrap.checked = false ;}
+  // ----  
+  TDbordercolor.value=window.dialogArguments["BORDERCOLOR"];
+  TDbgcolor.value=window.dialogArguments["BGCOLOR"];
+  TDstyle.value=window.dialogArguments["STYLE"];  
+  TDclass.value=window.dialogArguments["CLASS"];
+ // end update
+ </SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  // collect table info to return value
+  var arr = new Array();
+  // align
+  switch( TDalign.selectedIndex )
+    {
+    case 0: arr["ALIGN"] = ""; break;
+    case 1: arr["ALIGN"] = "left"; break;
+    case 2: arr["ALIGN"] = "center"; break;
+    case 3: arr["ALIGN"] = "right"; break;
+ 
+    }
+  // valign
+    switch( TDvalign.selectedIndex )
+    {
+    case 0: arr["VALIGN"] = ""; break;
+    case 1: arr["VALIGN"] = "top"; break;
+    case 2: arr["VALIGN"] = "middle"; break;
+    case 3: arr["VALIGN"] = "baseline"; break;
+    case 4: arr["VALIGN"] = "bottom"; break;
+    }
+    
+   // width
+   if (specifywidth.checked)
+   {arr["WIDTH"]=TDwidth.value;}
+   else 
+   {arr["WIDTH"]=-1;}
+
+   if ( TDwidthmode.options(0).selected ) {arr["WIDTHmode"]= "%"} else {arr["WIDTHmode"]= ""}
+   
+   // height
+   if (specifyheight.checked)
+   {arr["HEIGHT"]=TDwidth.value;}
+   else 
+   {arr["HEIGHT"]=-1;}
+
+   if ( TDheightmode.options(0).selected ) {arr["HEIGHTmode"]= "%"} else {arr["HEIGHTmode"]= ""}  
+ 
+  // rowspan & colspan 
+   arr["COLSPAN"]=TDcolspan.value;
+   arr["ROWSPAN"]=TDrowspan.value;
+   
+  // nowrap ?
+  if (TDnowrap.checked) {arr["NOWRAP"]=true; } 
+    else { arr["NOWRAP"]=false; ;}
+         
+   arr["BORDERCOLOR"]=TDbordercolor.value;
+   arr["BGCOLOR"]=TDbgcolor.value;
+   arr["STYLE"]=TDstyle.value; 
+   arr["CLASS"]=TDclass.value;
+
+ // end update  
+ // return values
+  window.returnValue = arr;
+  window.close();
+  
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+<fieldset ><legend> <b>Proprietés de la cellule</b> </legend>
+<DIV Align=center style ="MARGIN: 3px" > 
+  <table width="359" border="0" cellspacing="1" cellpadding="0" height="130">
+    <tr>
+      <td height="57" width="184" rowspan="3">
+        <div align="justify">
+          <table border="0" width="100%" cellspacing="0" cellpadding="2">
+            <tr>
+              <td width="50%">Alignement horizontal</td>
+              <td width="50%"><select size="1" name="TDalign">
+          <option selected>Par défaut</option>
+          <option>Gauche</option>
+          <option>Centré</option>
+          <option>Droite</option>
+        </select>
+              </td>
+            </tr>
+            <tr>
+              <td width="50%">Alignement<br>
+                vertical</td>
+              <td width="50%"><select size="1" name="TDvalign">
+          <option selected>Par défaut</option>
+          <option>Haut</option>
+          <option>Milieu</option>
+          <option>Ligne de base</option>
+          <option>Bas</option>
+        </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+ </td>
+      <td height="28" width="145" colspan="3">
+      <input type="checkbox" name="specifywidth" class="rd" onclick="EnableWidth(this.checked)"> Spécifier la
+      largeur</td>
+    </tr>
+    <tr>
+      <td height="1" width="145" colspan="3">
+      <div align="justify">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50%"><INPUT type="text" name=TDwidth size=8 ONKEYPRESS="event.returnValue=IsDigit();"></td>
+            <td width="50%"><select size="1" name="TDwidthmode">
+                <option selected>%</option>
+                <option>Pixel</option>
+              </select></td>
+          </tr>
+        </table>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="28" width="145" colspan="3">
+      <input type="checkbox" name="specifyheight" class="rd" onclick="EnableHeight(this.checked)" value="ON"> 
+      Spécifier la hauteur</td>
+    </tr>
+    <tr>
+      <td height="28" width="174"> <input id="TDnowrap" type="checkbox"  class="rd" value="ON"> 
+        Pas de renvoi à la ligne </td>
+      <td height="28" width="145" colspan="3">
+      <div align="justify">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50%"><INPUT type="text" name=TDheight size=8 ONKEYPRESS="event.returnValue=IsDigit();"></td>
+            <td width="50%"><select size="1" name="TDheightmode">
+                <option selected>%</option>
+                <option>Pixel</option>
+              </select></td>
+          </tr>
+        </table>
+      </div>
+      </td>
+    </tr>
+    <tr> 
+      <td height="1" colspan="4" width="311">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td height="56" width="184" rowspan="2">
+        <table border="0" width="100%" cellspacing="0" cellpadding="2">
+          <tr>
+            <td width="59%">Nombre de lignes par cellule</td>
+            <td width="41%"><INPUT type="text" name=TDrowspan size=8 ONKEYPRESS="event.returnValue=IsDigit();"></td>
+          </tr>
+          <tr>
+            <td width="59%">Nombre de colonnes par cellule</td>
+            <td width="41%"><INPUT type="text" name=TDcolspan size=8 ONKEYPRESS="event.returnValue=IsDigit();"></td>
+          </tr>
+        </table>
+      </td>
+      <td height="28" width="57">Couleur<br>
+        bordure</td>
+      <td height="28" width="62"><input name="TDbordercolor" size="10" ></td>
+      <td height="28" width="26"><IMG alt="Couleur bordure" border=0 height=22 onclick=updatecolor(TDbordercolor) src ="icons/bgcolor.gif" width=23 ></td>
+    </tr>
+    <tr> 
+      <td height="28" width="57">Couleur arrière-plan</td>
+      <td height="28" width="62"><input name="TDbgcolor" size="10"></td>
+      <td height="28" width="26"><IMG alt="Couleur arrière-plan" border=0 height=22 onclick=updatecolor(TDbgcolor) src ="icons/bgcolor.gif" width=23 ></td>
+    </tr>
+    <tr> 
+      <td height="21" width="311" colspan="4">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr>
+      <td height="25" width="315" colspan="4">&nbsp;Style&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="TDstyle" size="15" >&nbsp;&nbsp;
+        Classe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="TDclass" size="15" >
+      </td>
+    </tr>
+  </table>
+
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+<BUTTON ID=Ok TYPE=submit>OK </BUTTON>&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Annuler</BUTTON>
+</div>
+</BODY>
+</HTML>

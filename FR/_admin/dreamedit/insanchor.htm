@@ -1,0 +1,68 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: insanchor.htm
+	Function: Dialog for insering Anchors
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Signet</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ INPUT.rd  {background-color :menu ; font-family : Tahoma; font-size:11 ; border : 0}
+ SELECT {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+</STYLE>
+<SCRIPT LANGUAGE=JavaScript FOR=window EVENT=onload>
+ // get anchor inormation and update window
+   
+    AnchorName.value=window.dialogArguments["NAME"];
+  
+ // end update
+ </SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+   // return anchor name
+   var arr = new Array();
+   arr["NAME"]=AnchorName.value;
+   
+   window.returnValue = arr;
+   window.close();
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+<fieldset ><legend> <b> Insérer un signet</b> </legend>
+<DIV  style =" margin: 5px" > 
+  <table width=250 border="0" cellspacing="1" cellpadding="0" >
+    <tr> 
+      <td colspan="2">
+      </td>
+    </tr>
+    <tr> 
+      <td>&nbsp;Nom du signet #:</td>
+      <td><input name="AnchorName" size="20"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+ </td>
+    </tr>
+  </table>
+
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+<BUTTON ID=Ok TYPE=submit>OK </BUTTON>&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Annuler</BUTTON>
+</div>
+</BODY>
+</HTML>

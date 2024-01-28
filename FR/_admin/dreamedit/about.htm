@@ -1,0 +1,124 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: about.htm
+	Function: Dialog for showing credits
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE></TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ INPUT.rd  {background-color :menu ; font-family : Tahoma; font-size:11 ; border : 0}
+ SELECT {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript FOR=window EVENT=onload>
+  // sys info
+  
+plat.innerHTML = navigator.platform +' '+navigator.cpuClass
+lang.innerHTML = navigator.systemLanguage;          
+nav.innerHTML = navigator.appName+' '+navigator.appVersion
+
+ </SCRIPT>
+ 
+</HEAD>
+
+<BODY>
+<fieldset ><legend> <b>A propos de DREAM EDIT</b> </legend>
+<DIV Align=center style ="MARGIN: 3px" > 
+  <table width="349" border="0" cellspacing="1" cellpadding="0" height="173">
+    <tr> 
+      <td height="25" width="302">
+        <p align="center"><img border="0" src="icons/editorlogo_vbig.gif" width="321" height="61"><br>
+        DREAM EDIT V 1.0</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="311" height="21">
+        <hr align="center" width="340">
+ </td>
+    </tr>
+    <tr>
+      <td height="57" width="309">
+<textarea style="background-color: #666666; color: #FFFFFF; height: 66; width: 338; font-style: normal; font-variant: normal; font-weight: normal; font-size: 8pt; font-family: Arial, Helvetica, Verdana" readonly rows="1" cols="20">Avertissement : ce logiciel est protégé par la loi du copyright et par les traités internationaux. Toute personne ne respectant pas ces dispositions se rendra coupable du délit de contrefaçon et sera passible des sanctions pénales prévues par la loi.
+
+
+</textarea>
+
+ </td>
+    </tr>
+    <tr> 
+      <td height="1" width="311">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <div align="justify">
+          <table border="0" width="100%">
+            <tr>
+              <td width="100%"><font color="#0000FF">Licence accordée
+                à :</font><br>
+                L'Agence de Promotion de l'industrie - API</td>
+            </tr>
+            <tr>
+              <td width="100%"><font color="#0000FF">Développement :&nbsp;</font><br>
+        SGHAIER Mahmoud Responsable développement ICARE&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <table border="0" width="100%">
+          <tr>
+            <td width="38%" valign="top"><font color="#0000FF">Platforme :</font></td>
+            <td width="62%" id="plat" valign="top"></td>
+          </tr>
+          <tr>
+            <td width="38%" valign="top"><font color="#0000FF">Langage système :</font></td>
+            <td width="62%" id="lang" valign="top"></td>
+          </tr>
+          <tr>
+            <td width="38%" valign="top"><font color="#0000FF">Navigateur :</font></td>
+            <td width="62%" id="nav" valign="top" ></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td>
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td valign="top">
+        <p align="center"><b>Copyright © 2000-2003 ICARE Web Agency &amp; NTI.&nbsp;<br>
+ Tous Droit réservés. </b> <a href="http://www.icare.com.tn" target="_blank" ><b>http://www.icare.com.tn<br>
+        </b>
+        </a></p>
+      </td>
+    </tr>
+  </table>
+
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Fermer</BUTTON>
+</div>
+</BODY>
+</HTML>

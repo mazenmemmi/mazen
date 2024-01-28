@@ -1,0 +1,280 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: inscar.htm
+	Function: Dialog for insering special caractere
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Caractères spéciaux</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+ .s
+{
+	font-family: Symbol;
+	background-color: menu; 
+	border-bottom: buttonshadow solid 1px; 
+	border-left: buttonhighlight solid 1px; 
+	border-right: buttonshadow solid 1px; 
+	border-top:  buttonhighlight solid 1px;
+	cursor:hand;
+}
+
+.a
+{
+	font-family: Arial;
+	background-color: menu; 
+	border-bottom: buttonshadow solid 1px; 
+	border-left: buttonhighlight solid 1px; 
+	border-right: buttonshadow solid 1px; 
+	border-top:  buttonhighlight solid 1px;
+	cursor:hand;
+}
+.zoom { border-bottom: buttonshadow solid 1px; 
+	border-left: buttonhighlight solid 1px; 
+	border-right: buttonshadow solid 1px; 
+	border-top:  buttonhighlight solid 1px;
+	width: 30;
+	height : 30;
+	background : white;
+	font-family : tahoma;
+	font-size : 16pt;
+	margin: 0;
+	padding : 0;
+	}
+      
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+var arr;
+
+function insChar(s, c) 
+{
+	if (s) 
+	{ 
+	  arr = '<FONT FACE=Symbol>&#' + c + ';</FONT>'; 
+	  zooming.innerHTML = arr;
+	} 
+	   else 
+	{ 
+	    arr = '&#' + c + ';' 
+	    zooming.innerHTML = arr;
+	 }
+}
+
+function insNBSP() 
+{
+	arr = '&nbsp;';
+	zooming.innerHTML = arr;
+}
+
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+ 
+ // return values
+  if (arr) window.returnValue = arr; else window.returnValue=null;
+  window.close();
+  
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+<fieldset ><legend> <b>Insérer un caractère spécial</b> </legend>
+<DIV Align=center style ="MARGIN: 3px" > 
+  <table width="350" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td width="379">
+        <b>Caractères spéciaux</b>
+      </td>
+    </tr>
+    <tr> 
+      <td height="1" width="379">
+
+<TABLE CELLSPACING=0 CELLPADDING=1 BORDER=0 width="100%">
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insNBSP()" TITLE="&amp;nbsp;">&nbsp;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,128)">&#128;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,131)">&#131;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,137)">&#137;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,138)">&#138;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,140)">&#140;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,142)">&#142;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,153)">&#153;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,154)">&#154;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,156)">&#156;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,158)">&#158;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,159)">&#159;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,162)">&#162;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,163)">&#163;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,164)">&#164;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,165)">&#165;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,166)">&#166;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,167)">&#167;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,168)">&#168;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,169)">&#169;</TD>
+</TR>
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,170)">&#170;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,171)">&#171;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,172)">&#172;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,173)">&#173;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,174)">&#174;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,175)">&#175;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,176)">&#176;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,177)">&#177;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,178)">&#178;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,179)">&#179;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,180)">&#180;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,181)">&#181;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,182)">&#182;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,183)">&#183;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,184)">&#184;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,185)">&#185;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,186)">&#186;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,187)">&#187;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,188)">&#188;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,189)">&#189;</TD>
+</TR>
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,190)">&#190;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,191)">&#191;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,192)">&#192;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,193)">&#193;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,194)">&#194;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,195)">&#195;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,196)">&#196;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,197)">&#197;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,198)">&#198;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,199)">&#199;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,200)">&#200;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,201)">&#201;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,202)">&#202;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,203)">&#203;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,204)">&#204;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,205)">&#205;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,206)">&#206;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,207)">&#207;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,208)">&#208;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,209)">&#209;</TD>
+</TR>
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,210)">&#210;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,211)">&#211;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,212)">&#212;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,213)">&#213;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,214)">&#214;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,215)">&#215;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,216)">&#216;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,217)">&#217;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,218)">&#218;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,219)">&#219;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,220)">&#220;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,221)">&#221;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,222)">&#222;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,223)">&#223;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,224)">&#224;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,225)">&#225;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,226)">&#226;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,227)">&#227;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,228)">&#228;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,229)">&#229;</TD>
+</TR>
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,230)">&#230;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,231)">&#231;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,232)">&#232;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,233)">&#233;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,234)">&#234;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,235)">&#235;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,236)">&#236;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,237)">&#237;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,238)">&#238;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,239)">&#239;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,240)">&#240;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,241)">&#241;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,242)">&#242;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,243)">&#243;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,244)">&#244;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,245)">&#245;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,246)">&#246;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,247)">&#247;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,248)">&#248;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,249)">&#249;</TD>
+</TR>
+<TR>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,250)">&#250;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,251)">&#251;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,252)">&#252;</TD>
+<TD CLASS="a" ALIGN="center" onClick="insChar(0,253)">&#253;</TD><TD CLASS="a" ALIGN="center" onClick="insChar(0,254)">&#254;</TD></TR>
+</TABLE>
+      </td>
+    </tr>
+    <tr> 
+      <td width="379">
+        <b>Symboles</b>
+      </td>
+    </tr>
+    <tr>
+      <td height="25" width="379">
+<TABLE CELLSPACING=0 CELLPADDING=1 BORDER=0 width="100%">
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,65)">&#65;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,66)">&#66;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,67)">&#67;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,68)">&#68;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,69)">&#69;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,70)">&#70;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,71)">&#71;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,72)">&#72;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,73)">&#73;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,74)">&#74;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,75)">&#75;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,76)">&#76;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,77)">&#77;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,78)">&#78;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,79)">&#79;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,80)">&#80;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,81)">&#81;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,82)">&#82;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,83)">&#83;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,84)">&#84;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,85)">&#85;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,86)">&#86;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,87)">&#87;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,88)">&#88;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,89)">&#89;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,90)">&#90;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,91)">&#91;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,92)">&#92;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,93)">&#93;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,94)">&#94;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,95)">&#95;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,96)">&#96;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,97)">&#97;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,98)">&#98;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,99)">&#99;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,100)">&#100;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,101)">&#101;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,102)">&#102;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,103)">&#103;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,104)">&#104;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,105)">&#105;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,106)">&#106;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,107)">&#107;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,108)">&#108;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,109)">&#109;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,110)">&#110;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,111)">&#111;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,112)">&#112;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,113)">&#113;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,114)">&#114;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,115)">&#115;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,116)">&#116;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,117)">&#117;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,118)">&#118;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,119)">&#119;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,120)">&#120;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,121)">&#121;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,122)">&#122;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,161)">&#161;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,162)">&#162;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,163)">&#163;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,164)">&#164;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,165)">&#165;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,166)">&#166;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,167)">&#167;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,168)">&#168;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,169)">&#169;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,170)">&#170;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,171)">&#171;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,172)">&#172;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,174)">&#174;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,175)">&#175;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,176)">&#176;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,177)">&#177;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,178)">&#178;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,179)">&#179;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,180)">&#180;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,181)">&#181;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,182)">&#182;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,183)">&#183;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,184)">&#184;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,185)">&#185;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,186)">&#186;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,187)">&#187;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,188)">&#188;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,189)">&#189;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,190)">&#190;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,191)">&#191;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,192)">&#192;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,193)">&#193;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,194)">&#194;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,195)">&#195;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,196)">&#196;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,197)">&#197;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,198)">&#198;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,199)">&#199;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,200)">&#200;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,201)">&#201;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,202)">&#202;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,203)">&#203;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,204)">&#204;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,205)">&#205;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,206)">&#206;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,207)">&#207;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,208)">&#208;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,209)">&#209;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,210)">&#210;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,211)">&#211;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,212)">&#212;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,213)">&#213;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,214)">&#214;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,215)">&#215;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,216)">&#216;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,217)">&#217;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,218)">&#218;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,219)">&#219;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,220)">&#220;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,221)">&#221;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,222)">&#222;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,223)">&#223;</TD>
+</TR>
+<TR>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,224)">&#224;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,225)">&#225;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,226)">&#226;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,227)">&#227;</TD>
+<TD CLASS="s" ALIGN="center" onClick="insChar(1,228)">&#228;</TD><TD CLASS="s" ALIGN="center" onClick="insChar(1,229)">&#229;</TD>
+</TR>
+</TABLE>
+      </td>
+    </tr>
+    <tr>
+     <td align=right width="379"> 
+     <div class = "zoom" align="center" id=zooming>
+     A
+    </div>
+    </td>
+    </tr>
+  </table>
+
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+<BUTTON ID=Ok TYPE=submit>OK </BUTTON>&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Annuler</BUTTON>
+</div>
+</BODY>
+</HTML>

@@ -1,0 +1,177 @@
+
+.menuB,
+.menuB ul,
+.menuB li,
+.menuB a {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	z-index:5;
+}
+
+
+.searchpos {
+	
+	background-color:rgb(255, 255, 255);
+	vertical-align:top;
+	text-align:center;
+	padding: 10px 0px  ;
+	margin-left: 100px;
+	width: 300;
+
+}
+.searchpos div {
+    display: inline-block;
+}
+/* Menu */
+.menuB {	
+	height: 40px;
+	width: 730px;
+
+/*
+	background: #4c4e5a;
+	background: -webkit-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -moz-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -o-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: -ms-linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);
+	background: linear-gradient(top, #4c4e5a 0%,#2c2d33 100%);*/
+	/*------------------------------------------------------------------*/
+	background-color: #efeeee;
+	/* background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
+	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	 */
+	border-right: 1px solid rgba(255, 255, 255, 0);
+	
+	/* Adding a 1px inset highlight for a more polished efect: */
+	
+	box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	
+	
+	
+	
+	/*--------------------------------------------------------------------
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;*/
+}
+
+
+.menuB li {
+	position: relative;
+	list-style:none;
+	float:left;
+	
+	padding:0px 4px 0 4px;
+	display: block;
+	height: 40px;
+	z-index:3;
+
+}
+
+/* Links */
+
+.menuB li a {
+	display: block;
+	padding: 0px 0 4px 0;
+	margin:0px 0 4px 0;
+	line-height: 28px;
+	text-decoration: none;
+	border-right:0px solid #000;
+	/*border-left: 1px solid #393942;
+	border-right: 0px solid #4f5058;*/
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	color:#000000;
+	text-shadow: 0px 0px 0px rgba(0,0,0,.6);
+
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
+}
+
+.menuB li:first-child a { border-left: none; }
+.menuB li:last-child a{ border-right: none; }
+
+.menuB li:hover > a { color: #eb8909; }
+
+/* Sub Menu */
+
+.menuB ul {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	border: 1px solid #CCC;
+	opacity: 0;
+	background:rgb(255, 255, 255);
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+	-webkit-transition: opacity .25s ease .1s;
+	-moz-transition: opacity .25s ease .1s;
+	-o-transition: opacity .25s ease .1s;
+	-ms-transition: opacity .25s ease .1s;
+	transition: opacity .25s ease .1s;
+}
+
+.menuB li:hover > ul { opacity: 1; }
+	
+.menuB ul li {
+	height: 0;
+	overflow: hidden;
+	padding: 0;
+	border:0;
+	-webkit-transition: height .25s ease .1s;
+	-moz-transition: height .25s ease .1s;
+	-o-transition: height .25s ease .1s;
+	-ms-transition: height .25s ease .1s;
+	transition: height .25s ease .1s;
+}
+ul.menuB { margin: 0px auto 0 auto; }
+.menuB li:hover > ul li {
+	height: 36px;
+	overflow: visible;
+	padding: 0;
+	
+	
+}
+
+
+.menuB ul li a {
+	width: 250px;
+	padding: 4px 0 4px 4px;
+	margin: 0;
+	border: none;
+	border-bottom: 0px solid #353539;
+}
+.menuB ul li a:hover{
+	width: 224px;
+	background:url('../img/menuarrow.png') no-repeat left center;
+	padding:4px 0 4px 29px;
+	color:#F90;	
+}
+.menuB ul li:last-child a { border: none; }
+/* Icons */
+.menuB a.homeIcon{
+	background:url('../img/home.png') no-repeat center center;
+	display: block;
+	overflow: hidden;
+	padding-left: 12px;
+	padding-right: 0px;
+	/*text-indent:;*/
+	width: 16px;
+}
+
+.menuB a.documents { background: url(../img/docs.png) no-repeat 6px center; }
+.menuB a.messages { background: url(../img/bubble.png) no-repeat 6px center; }
+.menuB a.signout { background: url(../img/arrow.png) no-repeat 6px center; }

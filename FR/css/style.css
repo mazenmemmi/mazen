@@ -1,0 +1,37 @@
+#wrap {
+	
+		margin:1em auto;
+	}
+	.menu a {
+		border:none;
+		font-weight:normal;
+	}
+
+/* Actual menu CSS starts here */
+	.menu,
+	.menu ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+		
+	}
+	.menu {width:194px;}
+	.menu li {
+		display:block;
+		margin:0;
+		padding:0;
+		margin-bottom:1px;
+	}
+	.menu a {
+		display:block;
+		padding:2px 5px;
+		color:#ffffff;
+		background:#CCC;
+		text-decoration:none;
+	}
+	/*.menu a:hover,*/
+	.menu a:focus,
+	.menu a:active {background:#F90;}//Style Artcom
+	.menu ul li {padding-left:15px; background:url(./images/computer-31187_150.png) no-repeat left center;}
+	.menu ul a {background:#ffffff;}
+	.hidden {display:none;}

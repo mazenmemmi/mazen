@@ -1,0 +1,213 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: selcolor.htm
+	Function: Dialog for selecting color
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Couleur</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {MARGIN-LEFT : 10 px ;font-family: Tahoma; font-size:11; background:menu}
+ TD     { BORDER : inset 1px buttonhighlight ; WIDTH: 16px ; HEIGHT: 18px ;font-size:7}
+ TD.default { Margin:0; padding:0  ;font-size:9;}
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+ </STYLE>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onclick>
+  SelColor.value = event.srcElement.title;
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onmouseover>
+  text = event.srcElement.title;
+  if ( text != event.srcElement.bgColor )
+    text +="("+event.srcElement.bgColor+")";
+    if (event.srcElement.title=='Auto') text = 'Automatique';
+    RGB.innerText = text;
+  </SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=ColorTable EVENT=onmouseout>
+  RGB.innerText = " ";
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  window.returnValue = SelColor.value;
+  window.close();
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+
+<fieldset title="Choix de couleur"><legend> <b> Choix de couleur</b> </legend>
+<DIV Align=Center style="Margin:5 ; WIDTH : 300">
+<TABLE ID=ColorTable style="cursor:hand;" BORDER=0 CELLSPACING=1 CELLPADDING=0 width=300>
+<TR>
+<TD BGCOLOR=aliceblue TITLE=aliceblue>&nbsp;</td>
+<TD BGCOLOR=antiquewhite TITLE=antiquewhite>&nbsp;</td>
+<TD BGCOLOR=aqua TITLE=aqua>&nbsp;</td>
+<TD BGCOLOR=aquamarine TITLE=aquamarine>&nbsp;</td>
+<TD BGCOLOR=azure TITLE=azure>&nbsp;</td>
+<TD BGCOLOR=beige TITLE=beige>&nbsp;</td>
+<TD BGCOLOR=bisque TITLE=bisque>&nbsp;</td>
+<TD BGCOLOR=black TITLE=black>&nbsp;</td>
+<TD BGCOLOR=blanchedalmond TITLE=blanchedalmond>&nbsp;</td>
+<TD BGCOLOR=blue TITLE=blue>&nbsp;</td>
+<TD BGCOLOR=blueviolet TITLE=blueviolet>&nbsp;</td>
+<TD BGCOLOR=brown TITLE=brown>&nbsp;</td>
+<TD BGCOLOR=burlywood TITLE=burlywood>&nbsp;</td>
+<TD BGCOLOR=cadetblue TITLE=cadetblue>&nbsp;</td>
+<TD BGCOLOR=chartreuse TITLE=chartreuse>&nbsp;</td>
+<TD BGCOLOR=chocolate TITLE=chocolate>&nbsp;</td>
+<TR>
+<TD BGCOLOR=coral TITLE=coral>&nbsp;</td>
+<TD BGCOLOR=cornflower TITLE=cornflower>&nbsp;</td>
+<TD BGCOLOR=cornsilk TITLE=cornsilk>&nbsp;</td>
+<TD BGCOLOR=crimson TITLE=crimson>&nbsp;</td>
+<TD BGCOLOR=cyan TITLE=cyan>&nbsp;</td>
+<TD BGCOLOR=darkblue TITLE=darkblue>&nbsp;</td>
+<TD BGCOLOR=darkcyan TITLE=darkcyan>&nbsp;</td>
+<TD BGCOLOR=darkgoldenrod TITLE=darkgoldenrod>&nbsp;</td>
+<TD BGCOLOR=darkgray TITLE=darkgray>&nbsp;</td>
+<TD BGCOLOR=darkgreen TITLE=darkgreen>&nbsp;</td>
+<TD BGCOLOR=darkkhaki TITLE=darkkhaki>&nbsp;</td>
+<TD BGCOLOR=darkmagenta TITLE=darkmagenta>&nbsp;</td>
+<TD BGCOLOR=darkolivegreen TITLE=darkolivegreen>&nbsp;</td>
+<TD BGCOLOR=darkorange TITLE=darkorange>&nbsp;</td>
+<TD BGCOLOR=darkorchid TITLE=darkorchid>&nbsp;</td>
+<TD BGCOLOR=darkred TITLE=darkred>&nbsp;</td>
+<TR>
+<TD BGCOLOR=darksalmon TITLE=darksalmon>&nbsp;</td>
+<TD BGCOLOR=darkseagreen TITLE=darkseagreen>&nbsp;</td>
+<TD BGCOLOR=darkslateblue TITLE=darkslateblue>&nbsp;</td>
+<TD BGCOLOR=darkslategray TITLE=darkslategray>&nbsp;</td>
+<TD BGCOLOR=darkturquoise TITLE=darkturquoise>&nbsp;</td>
+<TD BGCOLOR=darkviolet TITLE=darkviolet>&nbsp;</td>
+<TD BGCOLOR=deeppink TITLE=deeppink>&nbsp;</td>
+<TD BGCOLOR=deepskyblue TITLE=deepskyblue>&nbsp;</td>
+<TD BGCOLOR=dimgray TITLE=dimgray>&nbsp;</td>
+<TD BGCOLOR=dodgerblue TITLE=dodgerblue>&nbsp;</td>
+<TD BGCOLOR=firebrick TITLE=firebrick>&nbsp;</td>
+<TD BGCOLOR=floralwhite TITLE=floralwhite>&nbsp;</td>
+<TD BGCOLOR=forestgreen TITLE=forestgreen>&nbsp;</td>
+<TD BGCOLOR=fuchia TITLE=fuchia>&nbsp;</td>
+<TD BGCOLOR=gainsboro TITLE=gainsboro>&nbsp;</td>
+<TD BGCOLOR=ghostwhite TITLE=ghostwhite>&nbsp;</td>
+<TR>
+<TD BGCOLOR=gold TITLE=gold>&nbsp;</td>
+<TD BGCOLOR=goldenrod TITLE=goldenrod>&nbsp;</td>
+<TD BGCOLOR=gray TITLE=gray>&nbsp;</td>
+<TD BGCOLOR=green TITLE=green>&nbsp;</td>
+<TD BGCOLOR=greenyellow TITLE=greenyellow>&nbsp;</td>
+<TD BGCOLOR=honeydew TITLE=honeydew>&nbsp;</td>
+<TD BGCOLOR=hotpink TITLE=hotpink>&nbsp;</td>
+<TD BGCOLOR=indianred TITLE=indianred>&nbsp;</td>
+<TD BGCOLOR=indigo TITLE=indigo>&nbsp;</td>
+<TD BGCOLOR=ivory TITLE=ivory>&nbsp;</td>
+<TD BGCOLOR=khaki TITLE=khaki>&nbsp;</td>
+<TD BGCOLOR=lavender TITLE=lavender>&nbsp;</td>
+<TD BGCOLOR=lavenderblush TITLE=lavenderblush>&nbsp;</td>
+<TD BGCOLOR=lawngreen TITLE=lawngreen>&nbsp;</td>
+<TD BGCOLOR=lemonchiffon TITLE=lemonchiffon>&nbsp;</td>
+<TD BGCOLOR=lightblue TITLE=lightblue>&nbsp;</td>
+<TR>
+<TD BGCOLOR=lightcoral TITLE=lightcoral>&nbsp;</td>
+<TD BGCOLOR=lightcyan TITLE=lightcyan>&nbsp;</td>
+<TD BGCOLOR=lightgoldenrodyellow TITLE=lightgoldenrodyellow>&nbsp;</td>
+<TD BGCOLOR=lightgreen TITLE=lightgreen>&nbsp;</td>
+<TD BGCOLOR=lightgrey TITLE=lightgrey>&nbsp;</td>
+<TD BGCOLOR=lightpink TITLE=lightpink>&nbsp;</td>
+<TD BGCOLOR=lightsalmon TITLE=lightsalmon>&nbsp;</td>
+<TD BGCOLOR=lightseagreen TITLE=lightseagreen>&nbsp;</td>
+<TD BGCOLOR=lightskyblue TITLE=lightskyblue>&nbsp;</td>
+<TD BGCOLOR=lightslategray TITLE=lightslategray>&nbsp;</td>
+<TD BGCOLOR=lightsteelblue TITLE=lightsteelblue>&nbsp;</td>
+<TD BGCOLOR=lightyellow TITLE=lightyellow>&nbsp;</td>
+<TD BGCOLOR=lime TITLE=lime>&nbsp;</td>
+<TD BGCOLOR=limegreen TITLE=limegreen>&nbsp;</td>
+<TD BGCOLOR=linen TITLE=linen>&nbsp;</td>
+<TD BGCOLOR=magenta TITLE=magenta>&nbsp;</td>
+<TR>
+<TD BGCOLOR=maroon TITLE=maroon>&nbsp;
+<TD BGCOLOR=mediumaquamarine TITLE=mediumaquamarine>&nbsp;</td>
+<TD BGCOLOR=mediumblue TITLE=mediumblue>&nbsp;</td>
+<TD BGCOLOR=mediumorchid TITLE=mediumorchid>&nbsp;</td>
+<TD BGCOLOR=mediumpurple TITLE=mediumpurple>&nbsp;</td>
+<TD BGCOLOR=mediumseagreen TITLE=mediumseagreen>&nbsp;</td>
+<TD BGCOLOR=mediumslateblue TITLE=mediumslateblue>&nbsp;</td>
+<TD BGCOLOR=mediumspringgreen TITLE=mediumspringgreen>&nbsp;</td>
+<TD BGCOLOR=mediumturquoise TITLE=mediumturquoise>&nbsp;</td>
+<TD BGCOLOR=mediumvioletred TITLE=mediumvioletred>&nbsp;</td>
+<TD BGCOLOR=midnightblue TITLE=midnightblue>&nbsp;</td>
+<TD BGCOLOR=mintcream TITLE=mintcream>&nbsp;</td>
+<TD BGCOLOR=mistyrose TITLE=mistyrose>&nbsp;</td>
+<TD BGCOLOR=moccasin TITLE=moccasin>&nbsp;</td>
+<TD BGCOLOR=navajowhite TITLE=navajowhite>&nbsp;</td>
+<TD BGCOLOR=navy TITLE=navy>&nbsp;</td>
+<TR>
+<TD BGCOLOR=oldlace TITLE=oldlace>&nbsp;</td>
+<TD BGCOLOR=olive TITLE=olive>&nbsp;</td>
+<TD BGCOLOR=olivedrab TITLE=olivedrab>&nbsp;</td>
+<TD BGCOLOR=orange TITLE=orange>&nbsp;</td>
+<TD BGCOLOR=orangered TITLE=orangered>&nbsp;</td>
+<TD BGCOLOR=orchid TITLE=orchid>&nbsp;</td>
+<TD BGCOLOR=palegoldenrod TITLE=palegoldenrod>&nbsp;</td>
+<TD BGCOLOR=palegreen TITLE=palegreen>&nbsp;</td>
+<TD BGCOLOR=paleturquoise TITLE=paleturquoise>&nbsp;</td>
+<TD BGCOLOR=palevioletred TITLE=palevioletred>&nbsp;</td>
+<TD BGCOLOR=papayawhip TITLE=papayawhip>&nbsp;</td>
+<TD BGCOLOR=peachpuff TITLE=peachpuff>&nbsp;</td>
+<TD BGCOLOR=peru TITLE=peru>&nbsp;</td>
+<TD BGCOLOR=pink TITLE=pink>&nbsp;</td>
+<TD BGCOLOR=plum TITLE=plum>&nbsp;</td>
+<TD BGCOLOR=powderblue TITLE=powderblue>&nbsp;</td>
+<TR>
+<TD BGCOLOR=purple TITLE=purple>&nbsp;</td>
+<TD BGCOLOR=red TITLE=red>&nbsp;</td>
+<TD BGCOLOR=rosybrown TITLE=rosybrown>&nbsp;</td>
+<TD BGCOLOR=royalblue TITLE=royalblue>&nbsp;</td>
+<TD BGCOLOR=saddlebrown TITLE=saddlebrown>&nbsp;</td>
+<TD BGCOLOR=salmon TITLE=salmon>&nbsp;</td>
+<TD BGCOLOR=sandybrown TITLE=sandybrown>&nbsp;</td>
+<TD BGCOLOR=seagreen TITLE=seagreen>&nbsp;</td>
+<TD BGCOLOR=seashell TITLE=seashell>&nbsp;</td>
+<TD BGCOLOR=sienna TITLE=sienna>&nbsp;</td>
+<TD BGCOLOR=silver TITLE=silver>&nbsp;</td>
+<TD BGCOLOR=skyblue TITLE=skyblue>&nbsp;</td>
+<TD BGCOLOR=slateblue TITLE=slateblue>&nbsp;</td>
+<TD BGCOLOR=slategray TITLE=slategray>&nbsp;</td>
+<TD BGCOLOR=snow TITLE=snow>&nbsp;</td>
+<TD BGCOLOR=springgreen TITLE=springgreen>&nbsp;</td>
+<TR>
+<TD BGCOLOR=steelblue TITLE=steelblue>&nbsp;</td>
+<TD BGCOLOR=tan TITLE=tan>&nbsp;</td>
+<TD BGCOLOR=teal TITLE=teal>&nbsp;</td>
+<TD BGCOLOR=thistle TITLE=thistle>&nbsp;</td>
+<TD BGCOLOR=tomato TITLE=tomato>&nbsp;</td>
+<TD BGCOLOR=turquoise TITLE=turquoise>&nbsp;</td>
+<TD BGCOLOR=violet TITLE=violet>&nbsp;</td>
+<TD BGCOLOR=wheat TITLE=wheat>&nbsp;</td>
+<TD BGCOLOR=white TITLE=white>&nbsp;</td>
+<TD BGCOLOR=whitesmoke TITLE=whitesmoke>&nbsp;</td>
+<TD BGCOLOR=yellow TITLE=yellow>&nbsp;</td>
+<TD BGCOLOR=yellowgreen TITLE=yellowgreen>&nbsp;</td>
+<TD class=default colspan=4 BGCOLOR=white TITLE=Auto align=center>&nbsp;&nbsp;&nbsp;Automatique</td>
+</TABLE>
+</div>
+
+</fieldset>
+<fieldset title="Paramètres"><legend> <b> Paramètres</b> </legend>
+<div style="Margin:5 ; WIDTH : 300">Couleur&nbsp;&nbsp;&nbsp;<INPUT TYPE=TEXT SIZE=18 ID=SelColor> </div>
+<div style="Margin:5 ; WIDTH : 300" >RGB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN ID=RGB>&nbsp;</SPAN></div>
+</fieldset>
+
+<div align=right><BUTTON ID=Ok TYPE=SUBMIT>OK</BUTTON>&nbsp;&nbsp;<BUTTON ONCLICK="window.close();">Annuler</BUTTON> </div>
+</BODY>
+</HTML>

@@ -1,0 +1,107 @@
+.carousel-skin-tango .carousel-container {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+   border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+}
+
+.carousel-skin-tango .carousel-direction-rtl {
+	direction: rtl;
+}
+
+.carousel-skin-tango .carousel-container-horizontal {
+    width: 245px;
+    padding: 20px 400px;
+}
+
+.carousel-skin-tango .carousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.carousel-skin-tango .carousel-clip {
+    overflow: hidden;
+}
+
+.carousel-skin-tango .carousel-clip-horizontal {
+    width:  245px;
+    height: 75px;
+}
+
+.carousel-skin-tango .carousel-clip-vertical {
+    width:  100px;
+    height: 245px;
+}
+
+.carousel-skin-tango .carousel-item {
+    width: 75px;
+    height: 75px;
+}
+
+.carousel-skin-tango .carousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+}
+
+.carousel-skin-tango .carousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.carousel-skin-tango .carousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.carousel-skin-tango .carousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+
+
+
+.carousel-skin-tango .carousel-next-vertical:hover,
+.carousel-skin-tango .carousel-next-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.carousel-skin-tango .carousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+
+.carousel-skin-tango .carousel-next-disabled-vertical,
+.carousel-skin-tango .carousel-next-disabled-vertical:hover,
+.carousel-skin-tango .carousel-next-disabled-vertical:focus,
+.carousel-skin-tango .carousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.carousel-skin-tango .carousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev-vertical.png) no-repeat 0 0;
+}
+
+.carousel-skin-tango .carousel-prev-vertical:hover,
+.carousel-skin-tango .carousel-prev-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.carousel-skin-tango .carousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+
+.carousel-skin-tango .carousel-prev-disabled-vertical,
+.carousel-skin-tango .carousel-prev-disabled-vertical:hover,
+.carousel-skin-tango .carousel-prev-disabled-vertical:focus,
+.carousel-skin-tango .carousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}

@@ -1,0 +1,186 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: inslink.htm ( subversino 1.01 ) added annexe code
+	Function: Dialog for insering links
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Lien hypertexte</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ INPUT.rd  {background-color :menu ; font-family : Tahoma; font-size:11 ; border : 0}
+ SELECT {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+ .Zone  { PADDING : 2px; BORDER:  outset 1px ;}    
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+
+function putanchors(anchvalue)
+  {
+     if (anchvalue=='') {
+     LinkType.options(1).selected = true;
+     LinkData.value = '';}
+     else {LinkType.options(0).selected = true;
+     LinkTarget.options(0).selected = true;
+     LinkData.value = anchvalue;}
+    }
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=window EVENT=onload>
+    // collect information and update window
+var myhref;
+var fbreak = false;
+var myhreftype;
+myhref =  window.dialogArguments["HREF"].toLowerCase()
+if (myhref!='') {
+for (i=1 ; i<LinkType.options.length&&!fbreak ; i++)
+ {
+ myhreftype=LinkType.options(i).value;
+ if (myhref.indexOf(myhreftype)!=-1)
+    { LinkType.options(i).selected = true;
+      LinkData.value = myhref.substr(myhreftype.length,myhref.length)
+      fbreak = true;
+      }        
+ }
+if (!fbreak) // others
+   { LinkType.options(0).selected = true;
+     LinkData.value = myhref
+     }
+}     
+
+// target
+if (window.dialogArguments["TARGET"]=='_blank')
+   { LinkTarget.options(1).selected=true} else {LinkTarget.options(0).selected=true}
+
+// title     
+LinkTitle.value = window.dialogArguments["TITLE"];
+  
+// anchors  
+ if (window.dialogArguments["ANCHORS"] != null)
+ {
+ 
+ for (i=0 ; i<window.dialogArguments["ANCHORS"].length ; i++ )
+        { MyAnchors=document.createElement("OPTION");
+          LinkAnchor.options.add(MyAnchors);
+          MyAnchors.text = '#'+window.dialogArguments["ANCHORS"][i];
+	  MyAnchors.value = '#'+window.dialogArguments["ANCHORS"][i];}
+ }
+ 
+ // style     
+LinkStyle.value = window.dialogArguments["STYLE"];
+
+// class     
+LinkClass.value = window.dialogArguments["CLASS"];
+
+ // end update
+ </SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  // collect table info to return value
+  var arr = new Array();
+   if (LinkData.value !='')
+   arr["HREF"] = LinkType.value+LinkData.value;
+   else
+   arr["HREF"] = '';
+   arr["TARGET"] = LinkTarget.value;
+   arr["TITLE"] = LinkTitle.value;
+   arr["STYLE"] = LinkStyle.value;
+   arr["CLASS"] = LinkClass.value;
+
+ // end update  
+ // return values
+  window.returnValue = arr;
+  window.close();
+  
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+<fieldset><legend> <b>Insérer un lien hypertexte</b> </legend>
+<DIV Align=center style ="MARGIN: 3px" > 
+  <table width="300" border="0" cellspacing="1" cellpadding="3">
+    <tr>
+      <td>URL </td>
+      <td>
+        <div align="justify">
+          <table border="0">
+            <tr>
+              <td><select size="1" name="LinkType">
+                  <option value="">[ Autre ]</option>
+                  <option selected value="http://">http://</option>
+                  <option value="https://">https://</option>
+                  <option value="ftp://">ftp://</option>
+                  <option value="javascript:">javascript:</option>
+                  <option value="mailto:">mailto:</option>
+                  <option value="directdoc.asp?docid=">Code annexe:</option>
+                </select></td>
+              <td><INPUT type="text" name=LinkData size=30></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Fenêtre&nbsp;&nbsp;</td>
+      <td><select size="1" name="LinkTarget">
+          <option selected>[ Par défaut ]</option>
+          <option value="_blank">Nouvelle fenêtre</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Titre</td>
+      <td><INPUT type="text" name=LinkTitle size=47></td>
+    </tr>
+    <tr> 
+      <td height="1" colspan="2" width="379">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td>Signet #</td>
+      <td><select size="1" name="LinkAnchor" onchange="putanchors(this.options[this.selectedIndex].value)">
+          <option value="">[ Aucun ]</option>
+          <option value="#signet_haut">#signet_haut</option>
+        </select>
+      </td>
+    </tr>
+    <tr> 
+      <td height="21" width="379" colspan="2">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr>
+      <td height="25" width="379" colspan="2">&nbsp;Style&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="LinkStyle" size="15" >&nbsp;&nbsp; Classe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="LinkClass" size="15" >
+      </td>
+    </tr>
+    <tr>
+    <td height="1" colspan="2" width="379"><hr align="center" width="340"></td>
+    </tr>
+    
+    <tr>
+      <td colspan="2" width="300" class="Zone" Height=18>
+         &nbsp; <img src="icons/linkfile.gif" alt="Lien vers un fichier" width="22" height="23">&nbsp; <img src="icons/linkcms.gif" alt="Lien vers DREAM CMS" width="22" height="23">
+      </td>
+     </tr>  
+  </table>
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+<BUTTON ID=Ok TYPE=submit>OK </BUTTON>&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Annuler</BUTTON>
+</div>
+</BODY>
+</HTML>

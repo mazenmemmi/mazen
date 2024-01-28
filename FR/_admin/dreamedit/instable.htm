@@ -1,0 +1,308 @@
+<!--- 
+	Application: DREAM EDIT 1.0
+	Name: instable.htm
+	Function: Dialog for insering table
+	Authors: SGHAIER MAHMOUD
+	Company: ICARE
+ --->
+<HTML>
+<HEAD>
+
+<TITLE>Tableau</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family: Tahoma; font-size:11; background:menu}
+ TD     {font-family : Tahoma; font-size:11; }
+ INPUT  {font-family : Tahoma; font-size:11; border: 1px inset}
+ INPUT.rd  {background-color :menu ; font-family : Tahoma; font-size:11 ; border : 0}
+ SELECT {font-family : Tahoma; font-size:11; border: 1px inset}
+ BUTTON {width:5em ;font-family : Tahoma; font-size:11;}
+</STYLE>
+
+<SCRIPT LANGUAGE=JavaScript>
+
+function IsDigit()
+{
+  return ((event.keyCode >= 48) && (event.keyCode <= 57))
+}
+
+
+function updatecolor(mycolorfield)
+{
+  var myarr = showModalDialog( "selcolor.htm","","dialogWidth: 340px ; dialogHeight: 330px; status:no" );
+  if (myarr != null) 
+  {
+    if (myarr=='Auto') myarr='';
+    mycolorfield.value = myarr;
+  }
+}
+
+function EnableWidth(isChecked)
+  {
+     //TWmode(0).disabled = !isChecked; 
+     //TWmode(1).disabled = !isChecked;
+     Twidth.disabled = !isChecked;
+     Twidthmode.disabled = !isChecked;
+     
+     if (Twidth.disabled)
+     {
+     Twidth.style.backgroundColor ='menu';
+     Twidthmode.style.backgroundColor = 'menu';
+     }
+     else
+     {
+     Twidth.style.backgroundColor ='white';
+     Twidthmode.style.backgroundColor = 'white';
+     }
+    }
+</SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=window EVENT=onload>
+  // collect table inormation and update window
+  Trows.value=window.dialogArguments["ROWS"];
+  Tcolumns.value=window.dialogArguments["COLS"];
+  switch( window.dialogArguments["ALIGN"] )
+    {
+    case "": Talign.options(0).selected = true; break;
+    case "left": Talign.options(1).selected = true; break;
+    case "center": Talign.options(2).selected = true; break;
+    case "right": Talign.options(3).selected = true; break;
+    }
+  if (window.dialogArguments["WIDTH"]==-1)
+    {
+    specifywidth.checked=false;
+    EnableWidth(false);
+    Twidth.value = '100'
+    }
+  else
+    {
+    specifywidth.checked=true;
+    EnableWidth(true);
+    Twidth.value=window.dialogArguments["WIDTH"];
+    }
+    if ( window.dialogArguments["WIDTHmode"]== "%" ) 
+    {
+      Twidthmode.options(0).selected=true
+      Twidthmode.options(1).selected=false
+    } 
+    else 
+    {
+      Twidthmode.options(0).selected=false
+      Twidthmode.options(1).selected=true
+    }
+    
+  Tborder.options(window.dialogArguments["BORDER"]).selected= true  ;
+  Tcellpadding.options(window.dialogArguments["CELLPADDING"]).selected= true  ;
+  Tcellspacing.options(window.dialogArguments["CELLSPACING"]).selected= true  ;
+
+  Tbordercolor.value=window.dialogArguments["BORDERCOLOR"];
+  Tbgcolor.value=window.dialogArguments["BGCOLOR"];
+  Tstyle.value=window.dialogArguments["STYLE"];
+  Tclass.value=window.dialogArguments["CLASS"];
+ // end update  
+ </SCRIPT>
+
+<SCRIPT LANGUAGE=JavaScript FOR=Ok EVENT=onclick>
+  // collect table info to return value
+  var arr = new Array();
+  arr["ROWS"]=Trows.value;
+  arr["COLS"]=Tcolumns.value;
+  
+  switch( Talign.selectedIndex )
+    {
+    case 0: arr["ALIGN"] = ""; break;
+    case 1: arr["ALIGN"] = "left"; break;
+    case 2: arr["ALIGN"] = "center"; break;
+    case 3: arr["ALIGN"] = "right"; break;
+    }
+   if (specifywidth.checked)
+   {arr["WIDTH"]=Twidth.value;}
+   else 
+   {arr["WIDTH"]=-1;}
+
+   if ( Twidthmode.options(0).selected ) {arr["WIDTHmode"]= "%"} else {arr["WIDTHmode"]= ""}
+  
+ 
+   arr["BORDER"]=Tborder.selectedIndex;
+   arr["CELLPADDING"]=Tcellpadding.selectedIndex;
+   arr["CELLSPACING"]=Tcellspacing.selectedIndex;
+     
+   arr["BORDERCOLOR"]=Tbordercolor.value;
+   arr["BGCOLOR"]=Tbgcolor.value;
+   arr["STYLE"]=Tstyle.value;
+   arr["CLASS"]=Tclass.value;
+
+ // end update  
+ // return values
+  window.returnValue = arr;
+  window.close();
+  
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+<div style="position: absolute ; top: 0 ; right : 0;" >
+<img border="0" src="icons/editorlogo_small.gif" width="72" height="13">
+</div>
+<fieldset ><legend> <b> Insérer un Tableau</b> </legend>
+<DIV Align=center style ="MARGIN: 3px" > 
+  <table width="349" border="0" cellspacing="1" cellpadding="0" height="173">
+    <tr> 
+      <td height="25" width="89">Lignes</td>
+      <td height="25" width="75"><input name="Trows" size="5" ONKEYPRESS="event.returnValue=IsDigit();"></td>
+      <td height="25" width="57"> Colonnes</td>
+      <td height="25" colspan="2" width="81"><input name="Tcolumns" size="5" ONKEYPRESS="event.returnValue=IsDigit();"></td>
+    </tr>
+    <tr>
+      <td colspan="5" width="311" height="21">
+        <hr align="center" width="340">
+ </td>
+    </tr>
+    <tr>
+      <td height="28" width="89">Marge intérieure<br>
+        des cellules </td>
+      <td height="28" width="75"><select size="1" name="Tcellpadding">
+          <option selected>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+	  <option>8</option>
+ 	  <option>9</option>
+ 	  <option>10</option>
+ 	  <option>11</option>
+	  <option>12</option>
+ 	  <option>13</option>
+ 	  <option>14</option>
+ 	  <option>15</option>
+ 	  <option>16</option>
+ 	  <option>17</option>
+ 	  <option>18</option>
+ 	  <option>19</option>
+ 	  <option>20</option>
+          </select></td>
+      <td height="28" width="145" colspan="3">
+      <input type="checkbox" name="specifywidth" class="rd" onclick="EnableWidth(this.checked)"> Spécifier la
+      largeur</td>
+    </tr>
+    <tr>
+      <td height="1" width="164" colspan="2"></td>
+      <td height="1" width="145" colspan="3">
+      <div align="justify">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50%"><INPUT type="text" name=Twidth size=8 ONKEYPRESS="event.returnValue=IsDigit();"></td>
+            <td width="50%"><select size="1" name="Twidthmode">
+                <option selected>%</option>
+                <option>Pixel</option>
+              </select></td>
+          </tr>
+        </table>
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="28" width="89">Espacement entre<br>
+        les cellules </td>
+      <td height="28" width="75"><select size="1" name="Tcellspacing">
+          <option selected 
+        >0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+	  <option>8</option>
+ 	  <option>9</option>
+ 	  <option>10</option>
+ 	  <option>11</option>
+	  <option>12</option>
+ 	  <option>13</option>
+ 	  <option>14</option>
+ 	  <option>15</option>
+ 	  <option>16</option>
+ 	  <option>17</option>
+ 	  <option>18</option>
+ 	  <option>19</option>
+ 	  <option>20</option>
+          </select></td>
+      <td  height="28" width="145" colspan="3">
+      </td>
+    </tr>
+    <tr> 
+      <td height="1" colspan="5" width="311">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr> 
+      <td height="28" width="89">Bordure&nbsp;</td>
+      <td height="28" width="75"><select size="1" name="Tborder">
+          <option selected>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+	  <option>8</option>
+ 	  <option>9</option>
+ 	  <option>10</option>
+ 	  <option>11</option>
+	  <option>12</option>
+ 	  <option>13</option>
+ 	  <option>14</option>
+ 	  <option>15</option>
+ 	  <option>16</option>
+ 	  <option>17</option>
+ 	  <option>18</option>
+          <option>19</option>
+ 	  <option>20</option>
+          </select>
+      </td>
+      <td height="28" width="57">Couleur<br>
+        bordure</td>
+      <td height="28" width="62"><input name="Tbordercolor" size="10" ></td>
+      <td height="28" width="26"><IMG alt="Couleur bordure" border=0 height=22 onclick=updatecolor(Tbordercolor) src ="icons/bgcolor.gif" width=23 ></td>
+    </tr>
+    <tr> 
+      <td height="28" width="89">Alignement</td>
+      <td height="28" width="75"><select size="1" name="Talign">
+          <option selected>Par défaut</option>
+          <option>Gauche</option>
+          <option>Centré</option>
+          <option>Droite</option>
+        </select>
+      </td>
+      <td height="28" width="57">Couleur arrière-plan</td>
+      <td height="28" width="62"><input name="Tbgcolor" size="10" 
+     ></td>
+      <td height="28" width="26"><IMG alt="Couleur arrière-plan" border=0 height=22 onclick=updatecolor(Tbgcolor) src ="icons/bgcolor.gif" width=23 ></td>
+    </tr>
+    <tr> 
+      <td height="21" width="311" colspan="5">
+        <hr align="center" width="340">
+      </td>
+    </tr>
+    <tr>
+      <td height="25" width="315" colspan="5">&nbsp;Style&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="Tstyle" size="15" >&nbsp;&nbsp;
+        Classe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="Tclass" size="15" >
+      </td>
+    </tr>
+  </table>
+
+</DIV>
+</fieldset>
+<div align=right>
+<br>
+<BUTTON ID=Ok TYPE=submit>OK </BUTTON>&nbsp;&nbsp; <BUTTON ONCLICK="window.close();">Annuler</BUTTON>
+</div>
+</BODY>
+</HTML>
